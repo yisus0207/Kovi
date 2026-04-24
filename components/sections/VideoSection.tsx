@@ -21,7 +21,7 @@ export default function VideoSection() {
           </div>
           <div className={styles.stat}>
             <div className={styles.statNum}>24/7</div>
-            <div className={styles.statLabel}>Luna activa</div>
+            <div className={styles.statLabel}>Aura activa</div>
           </div>
           <div className={styles.stat}>
             <div className={styles.statNum}>100%</div>

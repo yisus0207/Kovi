@@ -19,7 +19,7 @@ export default function Navbar() {
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.navInner}>
           <Link href="#" className={styles.navLogo}>
-            <span className={styles.navLogoText}>barberia<span className={styles.dot}>.lat</span></span>
+            <span className={styles.navLogoText}>KOVI<span className={styles.dot}>.ai</span></span>
           </Link>
 
           <div className={styles.navRight}>

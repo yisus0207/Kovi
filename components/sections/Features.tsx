@@ -3,10 +3,10 @@ import styles from './Features.module.css'
 
 export default function Features() {
   const feats = [
-    { icon: '💬', title: 'Atiende en WhatsApp', desc: 'Responde al instante, en el tono de tu barbería.' },
+    { icon: '💬', title: 'Atiende en WhatsApp', desc: 'Responde al instante, en el tono de tu propio negocio.' },
     { icon: '📅', title: 'Agenda citas sola', desc: 'Ve disponibilidad en tiempo real y confirma turnos automáticamente.' },
-    { icon: '🔔', title: 'Recordatorios automáticos', desc: 'Reduce los no-shows con avisos antes del turno.' },
-    { icon: '💰', title: 'Informa precios y servicios', desc: 'Tu menú de servicios siempre actualizado para cada cliente.' },
+    { icon: '🔔', title: 'Recordatorios automáticos', desc: 'Reduce las inasistencias con avisos antes de la cita.' },
+    { icon: '💰', title: 'Informa precios y servicios', desc: 'Tu catálogo de servicios siempre actualizado para cada cliente.' },
     { icon: '🔄', title: 'Fidelización activa', desc: 'Recuerda a clientes inactivos e invita a volver.' },
     { icon: '📊', title: 'Métricas en tu panel', desc: 'Citas, ingresos y clientes, siempre actualizados.' }
   ]
@@ -14,8 +14,8 @@ export default function Features() {
   return (
     <section id="features" className={styles.section}>
       <div className={styles.inner}>
-        <span className="label">Qué puede hacer Luna</span>
-        <h2 className="h2 fade-up">Una recepcionista<br/><em>que no descansa</em></h2>
+        <span className="label">Qué puede hacer Aura</span>
+        <h2 className="h2 fade-up">Una asistente virtual<br/><em>que no descansa</em></h2>
 
         <div className={styles.featGrid}>
           {feats.map((f, i) => (
@@ -31,7 +31,7 @@ export default function Features() {
         <div className="fade-up" style={{textAlign: 'center', marginTop: '48px'}}>
           <Link href="/register" className={styles.btnHero}>Probar gratis — 7 días sin costo</Link>
           <p style={{fontSize: '0.8rem', color: 'var(--muted)', marginTop: '10px'}}>
-            Sin tarjeta · Luna se activa al contratar · Cancela cuando quieras
+            Sin tarjeta · Aura se activa al contratar · Cancela cuando quieras
           </p>
         </div>
       </div>

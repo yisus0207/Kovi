@@ -36,14 +36,14 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(201,168,76,0.4);
-  background: var(--gold-dim);
+  background: var(--accent-dim);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-shippori);
   font-weight: 600;
   font-size: 1rem;
-  color: var(--gold);
+  color: var(--accent);
   flex-shrink: 0;
 }
 

@@ -52,13 +52,13 @@
 }
 
 .stars {
-  color: var(--gold);
+  color: var(--accent);
   font-size: 0.7rem;
 }
 
 .stat {
-  background: var(--gold-dim);
-  color: var(--gold);
+  background: var(--accent-dim);
+  color: var(--accent);
   font-family: var(--font-noto);
   font-weight: 600;
   font-size: 0.7rem;

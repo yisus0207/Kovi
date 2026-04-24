@@ -60,8 +60,8 @@
 }
 
 .open .faqIcon {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: rotate(45deg);
 }
 
@@ -79,5 +79,5 @@
 }
 
 .open .faqQText {
-  color: var(--gold);
+  color: var(--accent);
 }

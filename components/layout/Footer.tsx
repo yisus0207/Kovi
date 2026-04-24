@@ -7,18 +7,18 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.top}>
           <div>
-            <div className={styles.brand}>barberia<span className={styles.dot}>.lat</span></div>
-            <p className={styles.tagline}>Recepcionista IA para barberías en LATAM</p>
+            <div className={styles.brand}>KOVI<span className={styles.dot}>.ai</span></div>
+            <p className={styles.tagline}>Asistente de IA para negocios en LATAM</p>
           </div>
           <nav className={styles.links}>
             <Link href="#como-funciona">Cómo funciona</Link>
-            <Link href="#pricing">Pricing</Link>
-            <Link href="https://www.barberia.lat/book/optus-barber" target="_blank" rel="noopener">Demo</Link>
-            <Link href="mailto:hola@barberia.lat">Contacto</Link>
+            <Link href="#pricing">Precio</Link>
+            <Link href="#hero">Demo</Link>
+            <Link href="mailto:hola@kovi.ai">Contacto</Link>
           </nav>
         </div>
         <div className={styles.bottom}>
-          &copy; 2026 barberia.lat — Recepcionista IA para barberías en LATAM
+          &copy; 2026 KOVI.ai — Asistente de IA para negocios en LATAM
         </div>
       </div>
     </footer>

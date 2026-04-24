@@ -48,7 +48,7 @@ CREATE TABLE public.negocios (
     owner_id UUID REFERENCES public.usuarios(id) NOT NULL,
     nombre TEXT NOT NULL,
     slug TEXT UNIQUE NOT NULL,
-    tipo_negocio TEXT DEFAULT 'BARBERIA',
+    tipo_negocio TEXT DEFAULT 'GENERAL',
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );

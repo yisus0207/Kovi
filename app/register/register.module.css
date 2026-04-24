@@ -1,0 +1,261 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Branding Side */
+.brandingSide {
+  flex: 1.2;
+  position: relative;
+  background: linear-gradient(135deg, #0A0A0A 0%, #141414 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  border-right: 1px solid var(--border);
+}
+
+.brandingContent {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+}
+
+.logo {
+  font-family: var(--font-shippori);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 80px;
+  display: block;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.valueProp {
+  margin-top: 40px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.description {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.featureList li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.icon {
+  background: var(--accent-dim);
+  color: var(--accent);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.featureList strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.featureList p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.brandingFooter {
+  position: absolute;
+  bottom: -100px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  filter: blur(150px);
+  opacity: 0.05;
+  top: 20%;
+  left: -100px;
+  pointer-events: none;
+}
+
+/* Form Side */
+.formSide {
+  flex: 1;
+  background: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.tabs {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px;
+  border-radius: 12px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border);
+}
+
+.tabs button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabs button.activeTab {
+  background: var(--surface-2);
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.formHeader {
+  margin-bottom: 32px;
+}
+
+.formHeader h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.formHeader p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+.inputGroup input, 
+.inputGroup select {
+  background: #181818;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #1e1e1e;
+}
+
+.phoneInput {
+  display: flex;
+  gap: 10px;
+}
+
+.phoneInput select {
+  width: 100px;
+}
+
+.phoneInput input {
+  flex: 1;
+}
+
+.submitBtn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.terms {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.terms a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .brandingSide {
+    display: none;
+  }
+  .formSide {
+    background: var(--bg);
+  }
+}

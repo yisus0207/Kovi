@@ -21,7 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add('js-ready')` }} />
       </head>
-      <body className="body">
+      <body className="body" suppressHydrationWarning>
         {children}
         <ScrollObserver />
       </body>

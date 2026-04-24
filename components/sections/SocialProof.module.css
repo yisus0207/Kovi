@@ -1,0 +1,70 @@
+.proofStrip {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C9A84C 0%, #7A5A10 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-shippori);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0A0A0A;
+  flex-shrink: 0;
+}
+
+.text {
+  flex: 1;
+}
+
+.quote {
+  font-family: var(--font-noto);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.meta {
+  font-size: 0.72rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+.stat {
+  background: var(--gold-dim);
+  color: var(--gold);
+  font-family: var(--font-noto);
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid rgba(201,168,76,0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+}

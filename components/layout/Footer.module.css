@@ -1,0 +1,72 @@
+.footer {
+  background: #060606;
+  border-top: 1px solid var(--border);
+  padding: 36px 20px 28px;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.brand {
+  font-family: var(--font-shippori);
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.dot {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.tagline {
+  font-family: var(--font-noto);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.links a {
+  font-family: var(--font-noto);
+  font-size: 0.82rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--gold);
+}
+
+.bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-noto);
+  font-size: 0.72rem;
+  color: var(--muted);
+  opacity: 0.5;
+}

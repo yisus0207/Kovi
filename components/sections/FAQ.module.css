@@ -1,0 +1,83 @@
+.section {
+  padding: 72px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqList {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--border);
+}
+
+.faqItem:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.faqQ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  gap: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.faqQText {
+  font-family: var(--font-shippori);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.faqIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.open .faqIcon {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: rotate(45deg);
+}
+
+.faqA {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faqAInner {
+  padding: 0 0 20px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.open .faqQText {
+  color: var(--gold);
+}

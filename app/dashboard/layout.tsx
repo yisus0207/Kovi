@@ -1,42 +1,41 @@
 "use client"
 
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './dashboard.module.css'
 
 const Icons = {
-  Dashboard: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>,
-  Message: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>,
-  Users: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-  Chart: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>,
-  Star: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
-  Settings: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>,
-  Menu: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+  WhatsApp: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#25d366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-7.6 8.38 8.38 0 0 1 3.8.9L21 3z"/></svg>,
+  Inbox: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>,
+  Users: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>,
+  Templates: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/></svg>,
+  Analytics: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>,
+  Config: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>,
+  Search: () => <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>,
+  User: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
+  Sun: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>,
+  Question: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>,
+  Logout: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
 }
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname()
-  const [isExpanded, setIsExpanded] = useState(false)
 
   const navItems = [
-    { name: 'Home', href: '/dashboard', icon: <Icons.Dashboard />, short: 'Home' },
-    { name: 'Mensajes', href: '/dashboard/inbox', icon: <Icons.Message />, short: 'Chat' },
-    { name: 'Clientes', href: '/dashboard/contacts', icon: <Icons.Users />, short: 'Clientes' },
-    { name: 'Reportes', href: '/dashboard/reports', icon: <Icons.Chart />, short: 'Reportes' },
-    { name: 'Aura AI', href: '/dashboard/aura', icon: <Icons.Star />, short: 'IA' },
-    { name: 'Ajustes', href: '/dashboard/settings', icon: <Icons.Settings />, short: 'Config' },
+    { name: 'Inbox', href: '/dashboard/inbox', icon: <Icons.Inbox /> },
+    { name: 'Contactos', href: '/dashboard/contacts', icon: <Icons.Users /> },
+    { name: 'Templates', href: '/dashboard/templates', icon: <Icons.Templates /> },
+    { name: 'Analytics', href: '/dashboard/reports', icon: <Icons.Analytics /> },
+    { name: 'Senfig', href: '/dashboard/settings', icon: <Icons.Config /> },
   ]
 
   return (
     <div className={styles.container}>
-      {/* Sidebar - Collapsible for Desktop */}
-      <aside className={`${styles.sidebar} ${isExpanded ? styles.expanded : ''}`}>
-        <div className={styles.sidebarHeader}>
-          <button className={styles.menuToggle} onClick={() => setIsExpanded(!isExpanded)}>
-            <Icons.Menu />
-          </button>
-          {isExpanded && <span className={styles.brandTitle}>Aura Admin</span>}
+      {/* SIDEBAR - ChatBusiness Style */}
+      <aside className={styles.sidebar}>
+        <div className={styles.sidebarLogo}>
+          <Icons.WhatsApp />
         </div>
 
         <nav className={styles.nav}>
@@ -47,26 +46,50 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
               className={`${styles.navItem} ${pathname === item.href ? styles.active : ''}`}
             >
               <span className={styles.navIcon}>{item.icon}</span>
-              {isExpanded && <span className={styles.navLabel}>{item.name}</span>}
+              <span className={styles.navLabel}>{item.name}</span>
             </Link>
           ))}
         </nav>
+
+        <div className={styles.sidebarFooter}>
+          <span className={styles.userCompany}>Barbería</span>
+          <span className={styles.userName}>Optus Barber</span>
+        </div>
       </aside>
 
-      {/* Main Area */}
+      {/* MAIN CONTAINER */}
       <div className={styles.mainContainer}>
-        {children}
+        {/* TOP BAR */}
+        <header className={styles.topBar}>
+          <div className={styles.topBarLeft}>
+            <span className={styles.topWelcome}>Hola, <strong>Diamont</strong></span>
+            <span className={styles.topDate}>Viernes 24 De Abril</span>
+          </div>
+          <div className={styles.topBarRight}>
+            <div className={styles.statusPill}>
+              <span className={styles.dot}></span> Estatus
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{ marginLeft: '4px' }}><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div className={styles.topSearch}>
+              <span>Buscar...</span>
+              <span className={styles.searchCmd}>⌘K</span>
+            </div>
+            <button className={styles.topAction}><Icons.Sun /></button>
+            <button className={styles.topAction}><Icons.Question /></button>
+            <button className={styles.topAction}><Icons.Logout /></button>
+          </div>
+        </header>
 
-        {/* Mobile Bottom Navigation - ONLY on Mobile */}
+        {/* CONTENT */}
+        <div className={styles.contentArea}>
+          {children}
+        </div>
+
+        {/* MOBILE NAV */}
         <nav className={styles.mobileNav}>
           {navItems.slice(0, 5).map((item) => (
-            <Link 
-              key={item.href} 
-              href={item.href}
-              className={`${styles.mobileNavItem} ${pathname === item.href ? styles.active : ''}`}
-            >
-              <span className={styles.mobileIcon}>{item.icon}</span>
-              <span className={styles.mobileLabel}>{item.short}</span>
+            <Link key={item.href} href={item.href} className={`${styles.mobileNavItem} ${pathname === item.href ? styles.active : ''}`}>
+              {item.icon}
             </Link>
           ))}
         </nav>

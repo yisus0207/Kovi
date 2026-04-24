@@ -11,48 +11,36 @@ const Icons = {
 
 export default function DashboardPage() {
   const stats = [
-    { title: 'Citas Hoy', value: '12', icon: <Icons.Calendar />, color: '#eab308' },
-    { title: 'Ingresos del día', value: '$1,250', icon: <Icons.Wallet />, color: '#22c55e' },
-    { title: 'Citas esta semana', value: '48', icon: <Icons.Trending />, color: '#3b82f6' },
-    { title: 'Confirmadas hoy', value: '8', icon: <Icons.Check />, color: '#22c55e' },
+    { title: 'Citas Hoy', value: '12', icon: <Icons.Calendar />, color: '#25d366' },
+    { title: 'Ingresos del día', value: '$1,250', icon: <Icons.Wallet />, color: '#3b82f6' },
+    { title: 'Citas esta semana', value: '48', icon: <Icons.Trending />, color: '#f97316' },
+    { title: 'Confirmadas hoy', value: '8', icon: <Icons.Check />, color: '#25d366' },
   ]
 
   return (
-    <div className={styles.dashboardContainer}>
-      <header className={styles.mainHeader}>
-        <div className={styles.headerTitle}>
-          <h2>Hola, Diamont</h2>
-          <span>Viernes, 24 de Abril de 2026</span>
-        </div>
-        <div className={styles.headerActions}>
-          <div className={styles.statusPill}>
-            <span className={styles.dot}></span> Aura Online
-          </div>
-        </div>
-      </header>
-
+    <div className={styles.contentArea} style={{ padding: '40px' }}>
       <main className={styles.statsGrid}>
         {stats.map((stat, i) => (
           <div key={i} className={styles.statCard}>
             <h4>{stat.title}</h4>
             <strong>{stat.value}</strong>
-            <div className={styles.statCardIcon} style={{ color: stat.color }}>{stat.icon}</div>
+            <div style={{ position: 'absolute', bottom: '24px', right: '24px', color: stat.color, opacity: 0.8 }}>
+              {stat.icon}
+            </div>
           </div>
         ))}
 
         {/* Action Suggestion Card */}
-        <div className={`${styles.statCard} ${styles.fullWidthCard}`}>
-          <h4>Enlace de reservas para tus clientes</h4>
-          <p style={{ fontSize: '0.8rem', color: '#737373', marginTop: '8px' }}>
+        <div className={styles.statCard} style={{ gridColumn: 'span 4', marginTop: '20px' }}>
+          <h4 style={{ color: '#25d366' }}>Enlace de reservas para tus clientes</h4>
+          <p style={{ fontSize: '0.9rem', color: '#737373', marginTop: '12px' }}>
             Aura está gestionando tus citas. Comparte este enlace para agendar automáticamente.
           </p>
-          <div style={{ background: '#0a0a0a', padding: '12px', borderRadius: '8px', marginTop: '16px', border: '1px solid #262626', color: '#eab308', fontSize: '0.8rem' }}>
+          <div style={{ background: '#0a0a0a', padding: '20px', borderRadius: '12px', marginTop: '20px', border: '1px solid #141414', color: '#fff', fontSize: '0.9rem', fontWeight: '600', letterSpacing: '0.02em' }}>
             https://aura.kovi.ai/booking/diamont-barber
           </div>
         </div>
       </main>
-
-      <button className={styles.fab}>+</button>
     </div>
   )
 }

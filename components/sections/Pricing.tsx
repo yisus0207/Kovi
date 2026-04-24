@@ -14,7 +14,7 @@ export default function Pricing() {
           <div className={`${styles.pricingCard} ${styles.recommended}`}>
             <div className={styles.pricingBadge}>Más popular</div>
             <p className={styles.pricingName}>Plan Mensual</p>
-            <div className={styles.pricingPrice}><sub>$</sub>100.000 <sub style={{fontSize: '0.85rem'}}>COP</sub></div>
+            <div className={styles.pricingPrice}><sub>$</sub>99.000 <sub style={{fontSize: '0.85rem'}}>COP</sub></div>
             <p className={styles.pricingPeriod}>por mes · por barbería</p>
             <span className={styles.pricingAnchor}>Lo que cobras por 3 cortes al mes</span>
             <ul className={styles.pricingFeatures}>
@@ -34,7 +34,7 @@ export default function Pricing() {
 
           <div className={styles.pricingCard}>
             <p className={styles.pricingName}>Plan Anual</p>
-            <div className={styles.pricingPrice}><sub>$</sub>1.000.000 <sub style={{fontSize: '0.85rem'}}>COP</sub></div>
+            <div className={styles.pricingPrice}><sub>$</sub>999.999 <sub style={{fontSize: '0.85rem'}}>COP</sub></div>
             <p className={styles.pricingPeriod}>por año · pagas 10, usas 12</p>
             <span className={styles.pricingAnchor}>Equivale a 2 cortes y medio al mes</span>
             <ul className={styles.pricingFeatures}>
@@ -43,8 +43,8 @@ export default function Pricing() {
               <li><span className={styles.check}>✓</span> Prioridad en soporte</li>
               <li><span className={styles.check}>✓</span> Acceso a nuevas funciones primero</li>
             </ul>
-            <Link href="/register?plan=anual" className={styles.btnPricingGhost}>Pagar anual — ahorra $200.000</Link>
-            <p className={styles.pricingSaving}>Ahorras $200.000 al año</p>
+            <Link href="/register?plan=anual" className={styles.btnPricingGhost}>Pagar anual — ahorra más de $80.000</Link>
+            <p className={styles.pricingSaving}>Ahorras más de $200.000 al año</p>
           </div>
 
         </div>

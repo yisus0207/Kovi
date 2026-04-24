@@ -105,9 +105,9 @@ export default function InboxPage() {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <button className={styles.topAction} style={{ background: '#25d366', color: '#000', border: 'none' }}><Icons.Send /></button>
-                <button className={styles.topAction}><Icons.More /></button>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <button className={styles.topAction} style={{ background: '#25d366', color: '#000', border: 'none', width: '28px', height: '28px' }}><Icons.Send /></button>
+                <button className={styles.topAction} style={{ width: '28px', height: '28px' }}><Icons.More /></button>
               </div>
             </header>
 
@@ -130,17 +130,13 @@ export default function InboxPage() {
             <footer className={styles.composerWrapper}>
               <div className={styles.composerInner}>
                 <input className={styles.composerInput} placeholder="Escribe un mensaje..." />
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px', alignItems: 'center' }}>
-                  <div style={{ display: 'flex', gap: '16px' }}>
+                <div style={{ display: 'flex', justifyItems: 'center', justifyContent: 'space-between', marginTop: '12px', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', gap: '20px' }}>
                     <Icons.Clip />
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#737373' }}>
-                      <Icons.Quick /> Respuestas rápidas
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#737373' }}>
-                      <Icons.Calendar /> Horario de seguimiento
-                    </div>
+                    <Icons.Quick />
+                    <Icons.Calendar />
                   </div>
-                  <button style={{ background: '#25d366', border: 'none', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyItems: 'center', justifyContent: 'center' }}>
+                  <button style={{ background: '#25d366', border: 'none', borderRadius: '50%', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Icons.Send />
                   </button>
                 </div>

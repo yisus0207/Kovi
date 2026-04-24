@@ -205,12 +205,12 @@
   }
   .showChat .chatWrapper { transform: translateX(0); }
   
-  .backBtn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
-  .chatHeader { padding: 12px 16px; gap: 8px; }
-  .chatStats { display: none; } /* Hide stats on mobile header to save space */
+  .backBtn { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: transparent; color: #fff; border: none; }
+  .chatHeader { padding: 10px 16px; gap: 4px; border-bottom: 1px solid #111; }
+  .chatStats { display: none; }
   
-  .messagesContainer { padding: 20px; gap: 10px; }
-  .bubbleLeft, .bubbleRight { max-width: 85%; font-size: 0.85rem; padding: 12px 16px; }
+  .messagesContainer { padding: 16px; gap: 8px; }
+  .bubbleLeft, .bubbleRight { max-width: 88%; font-size: 0.8rem; padding: 10px 14px; border-radius: 16px; }
 
   .mobileNav {
     display: flex; position: fixed; bottom: 0; left: 0; right: 0; height: 70px;
